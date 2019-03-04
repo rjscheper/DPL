@@ -1,2 +1,0 @@
-# DPL
-Designer Programming Language
