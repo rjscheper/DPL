@@ -1,0 +1,8 @@
+function main(a)
+	{
+	if (a = 3 
+		{
+		print "okay"
+		}
+	}
+main(4)

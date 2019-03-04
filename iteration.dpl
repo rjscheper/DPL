@@ -1,0 +1,14 @@
+function iter(n)
+	{
+	var i = 1
+	while (i < n)
+		{
+		print(i, " ")
+		i = i + 1
+		}
+	print("nLine")
+	print("i has been iterated until i = n")
+	print("nLine")
+	}
+iter(5)
+iter(10)

@@ -1,0 +1,8 @@
+function main()
+	{
+	var arr = makeArray(2)
+	setArray(arr, 0, 16)
+	setArray(arr, 1, 17)
+	print(getArray(arr,2))
+	}
+main()

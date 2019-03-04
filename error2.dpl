@@ -1,0 +1,6 @@
+function main(a,b)
+	{
+	if (7 ; 5)
+		print("Nice")
+	}
+main(1, 2)

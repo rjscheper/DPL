@@ -1,0 +1,66 @@
+Grammar for DPL
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+program : optExpressionList
+
+expressionList : expression
+               | expression COMMA expressionList
+
+optExpressionList : expressionList 
+                  | *empty*
+
+optParameterList : parameterList
+                 | *empty*
+
+parameterList : VARIABLE
+              | VARIABLE COMMA parameterList
+
+expression : unary
+           | unary operator expression
+
+op : PLUS | MINUS | TIMES | DIVIDES | ASSIGN | logicalOp
+//keyword in c++ "operator"
+
+logicalOp : EQUAL | LESSTHAN | GREATERTHAN | AND | OR
+
+unary : INTEGER
+      | VARIABLE
+      | OPAREN expression CPAREN
+      | MINUS unary
+      | VARIABLE OPAREN optExpressionList CPAREN
+      | BOOLEAN
+      | STRING
+      | NULL
+
+functionDef : FUNCTION VARIABLE OPAREN optParameterList CPAREN
+
+functionCall : VARIABLE OPAREN optExpressionList CPAREN
+             | ANONYMOUS OPAREN optParameterList CPAREN block OBRACKET optExpressionList CBRACKET
+
+optElse : ELSE block
+        | ELSE ifStatement
+        | *empty*
+
+whileLoop : WHILE OPEN_PAREN expression CLOSE_PAREN block
+
+block : OBRACE statements CBRACE
+
+ifStatement : IF OPAREN expression CPAREN block optElse
+
+statements : statement
+           | statement statements
+
+statement : expression 
+          | ifStatement
+          | whileLoop
+          | forLoop
+          | varDef
+          | functionDef
+          | functionCall
+
+varDef : VAR VARIABLE ASSIGN expresion
+       | VAR VARIABLE
+       | VAR VARIABLE ASSIGN functionDef
+
+

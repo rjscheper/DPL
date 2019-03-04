@@ -1,0 +1,22 @@
+function fib(n)
+	{
+	if ((n equal 0) or (n equal 1))
+		{
+		n
+		}
+	else
+		{
+		fib(n-1) + fib(n-2)
+		}
+	}
+var x = (fib(4))
+print(x)
+print("nLine")
+
+var y = fib(6)
+print(y)
+print("nLine")
+
+var z = fib(8)
+print(z)
+print("nLine")

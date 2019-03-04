@@ -1,0 +1,5 @@
+function main(a, b)
+	{
+	var x = functionThatDoesNotExist()
+	}
+main(1, 2)

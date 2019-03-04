@@ -1,0 +1,33 @@
+function main(x)
+	{
+	print("The value of x is ", x, "nLine")
+
+	if (x equal 1)
+		{
+		print("x is 1")
+		print("nLine")
+		}
+
+	else if (x < 50)
+		{
+		print("x is less than 50")
+		print("nLine")
+		}
+
+	else if ((x > 50) and (x < 99))
+		{
+		print("x is greater than 50 and less than 99")
+		print("nLine")
+		}
+
+	else
+		{
+		print("x is some value greater than 99")
+		print("nLine")
+		}
+
+	}
+main(0)
+main(25)
+main(75)
+main(100)

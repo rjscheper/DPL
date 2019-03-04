@@ -1,0 +1,95 @@
+Robert Scheper
+rjscheper@crimson.ua.edu
+
+My language is implemented in C++
+
+To run testing files, first type the command "make" to compile everything, and then type "dpl *testfile.dpl*" to run a specific fiile in the language. The main program first compiles and pretty prints the desired program, and then evaluates it. Testing procedures are detailed further at the bottom of this readme.
+
+The files are:
+lexer.cpp - contains the enumerated types for each kind of lexeme, as well as the classes of lexer and lexeme
+recognizer.cpp - contains the recognizer class, pretty printer, and main function of language
+env.cpp - contains the environment functions
+evaluate.cpp - contains the functions for evaluation
+The grammar is located in the grammar.txt file
+
+
+Comments are implemented with @ signs
+An example of commented line is: @ commented out stuff @
+
+nil is the NULL value for this language
+Assignment is done using =
+Removed semicolon, no symbol is used to end a line
+
+Types of values: integers, strings, booleans, arrays
+Arrays are made using C++'s vector feature
+
+Types of operators: 
+	integers: + is addition
+			  - is subtraction
+			  * is multiplication
+			  / is division
+	strings: + is concatenation
+			 else: the left value is returned
+	booleans: + set to 1
+			  - set to 0
+			  else: the left value is returned
+	array: left value is returned
+	mixed: left value is returned
+
+Types of conditionals: and, or, !, eq, <, >
+Iteration: implemented with while loops similar to C++
+
+function definitions are called by the keyword function *function name* (parameters) {block}
+variable definitions are called by the keywrod var *variable name* and then is followed by assignment with =
+
+Built-in functions:
+				makeArray(*sizeOfArray)
+				setArray(*arrayName, *location*, *valueToBeSet)
+				getArray(*arrayName, *location*)
+				print( , , );  //can be filled with expr, functionCall, etc.
+				isInt(*value*)  //boolean that tells if value is an integer or not
+				nLine //newline
+
+Anonymous functions are handled such as:
+				anonymous (*parameters*) {*block*)} [arguments]
+				or
+				anonymous (*parameters*) {*block*}
+
+--------------------------------------------------------------------------------------------
+
+For testing the testing problems:
+
+type command "make"
+
+"make error1" shows the error1 program
+"make error1x" runs the program, which catches a syntax error of not closing the parentheses in an if statement
+
+"make error2" shows the error2 program
+"make error2x" runs the program, which catches a syntax error of using an unrecognized symbol in comparison in an if statement
+
+"make error3" shows the error3 program
+"make error3x" runs the program, which catches a syntax error of trying to use an integer as a variable name and trying to assign to it
+
+"make error4" shows the error4 program
+"make error4x" runs the program, which catches a semantic error of calling a function that does not exist
+
+"make error5" shows the error5 program
+"make error5x" runs the program, which catches a semantic error of trying to call getArray on a location that is out of bounds of the size of the array
+
+"make arrays" shows the arrays program
+"make arraysx" runs the program, which shows the built-in abilities to create arrays with makeArray, set values of the array with setArray, and retrieve values from arrays with getArray. The output will be in the form of *value**ARRAYNAME**INDEX*
+
+"make conditionals" shows the conditionals program
+"make conditionalsx" runs the program, which shows the ability to use if, else if, and else along with conditionals comparing if x is less than and/or greater than other values
+
+"make recursion" shows the recursion program
+"make recursionx" runs the program, which shows the classic Fibonacci recursion
+
+"make iteration" shows the iteration program
+"make iterationx" runs the program, which uses a while loop to iterate a number by one until it reaches a desired value
+
+"make functions" shows the functions program
+"make functionsx" runs the program, which shows that functions are first class objects, by passing a function to the main function and calling that
+
+"make lambda" shows the functions program
+"make lambdax" runs the program, which shows a few uses of anonymous functions

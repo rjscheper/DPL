@@ -1,0 +1,11 @@
+function lambdaFunction(x)
+	{
+	print("First lambda function test: ", x(4))
+	print("nLine")
+
+	var f = anonymous(f) {f + 20}
+	print("Second lambda function test: ", f(12))
+	print("nLine")
+	}
+
+lambdaFunction(anonymous(a) {a * 2} )

@@ -1,0 +1,14 @@
+function main(f)
+	{
+	f(5)
+	}
+
+function f(number)
+	{
+	number = number * 3
+	var result = number + 30
+	print("number has been transformed to ", result)
+	print("nLine")
+	}
+
+main(f)
